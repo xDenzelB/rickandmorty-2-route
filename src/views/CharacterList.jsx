@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
 import { characterFetch } from "../services/fetch-utils";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Route } from "react-router-dom";
 
 export default function CharacterList() {
   const { url, path } = useRouteMatch();
@@ -31,7 +32,7 @@ export default function CharacterList() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-          <section>
+          <><section>
             <label htmlFor="gender">Characters search by Gender</label>
             <select id="gender" value={gender} onChange={genderChange}>
               <option value='all'>All</option>
@@ -50,7 +51,9 @@ export default function CharacterList() {
                 </div>
               ))}
             </div>
-          </section>
+          </section><Route path={`${path}:id`}>
+              <CharacterDetail characters={characters} />
+            </Route></>
       )}
     </div>
   )
