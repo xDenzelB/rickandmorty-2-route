@@ -19,12 +19,12 @@ export default function CharacterList() {
 
   useEffect(() => {
     async function getCharacters() {
-      const fetch = characterFetch();
+      const fetch = await characterFetch();
       setCharacters(fetch);
       setLoading(false);
     }
     getCharacters();
-  }, [])
+  }, [location.search])
   return (
     <div>
       <h1>Rick and Morty Characters... Again!!</h1>
@@ -39,6 +39,17 @@ export default function CharacterList() {
               <option value='Female'>Female</option>
               <option value='unknown'>unknown</option>
             </select>
+            <div>
+              {characters.map((character) => (
+                <div key={character.id}>
+                  <Link to={`${url}${character.id}`}>
+                    <h3>{character.name}</h3>
+                    <img src={character.image} alt={`image of ${character.name}`} />
+                    <p>Gender: {character.gender}</p>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </section>
       )}
     </div>
