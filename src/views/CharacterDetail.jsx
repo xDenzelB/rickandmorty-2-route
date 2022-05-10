@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import style from '../App.css';
 
 export default function CharacterDetail({ characters = [] }) {
   const { id } = useParams();
@@ -17,7 +17,7 @@ export default function CharacterDetail({ characters = [] }) {
   }, [id])
 
   return (
-    <div>
+    <div className={style.detail}>
       <h2>{character.name}</h2>
       <img alt="image" src={character.image} />
       <p>Species: {character.species}</p>

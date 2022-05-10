@@ -5,6 +5,7 @@ import CharacterDetail from "./CharacterDetail";
 import { characterFetch } from "../services/fetch-utils";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Route } from "react-router-dom";
+import style from '../App.css';
 
 export default function CharacterList() {
   const { url, path } = useRouteMatch();
@@ -40,9 +41,9 @@ export default function CharacterList() {
               <option value='Female'>Female</option>
               <option value='unknown'>unknown</option>
             </select>
-            <div>
+            <div className={style.character}>
               {characters.map((character) => (
-                <div key={character.id}>
+                <div className={style.rick} key={character.id}>
                   <Link to={`${url}${character.id}`}>
                     <h3>{character.name}</h3>
                     <img src={character.image} alt={`image of ${character.name}`} />

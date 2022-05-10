@@ -1,0 +1,50 @@
+
+
+html,
+body,
+#root,
+.App {
+  background-color: rgb(238, 248, 243);
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.character {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+}
+
+.rick {
+  margin: 10px;
+  border: solid rgb(5, 227, 49) 3px;
+  border-radius: 5px;
+  background-color: rgb(55, 225, 13);
+  opacity: 0.8;
+}
+
+.detail {
+  text-align: center;
+  border: dotted;
+  background-color: bisque;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15rem;
+  border-radius: 5px;
+  margin-left: 20rem;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+}
