@@ -2,20 +2,19 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
-export default function CharacterDetail() {
+export default function CharacterDetail({ characters = [] }) {
   const { id } = useParams();
   const [character, setCharacters] = useState({});
 
 
   useEffect(() => {
     async function getCharacter() {
-      const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-      const data = await res.json();
-      setCharacters(data);
+      const chosenCharacter = characters.find((character) => character.id === Number(id));
+      setCharacters(chosenCharacter);
       
     }
     getCharacter();
-  }, [])
+  }, [id])
 
   return (
     <div>
