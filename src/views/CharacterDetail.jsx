@@ -12,7 +12,7 @@ export default function CharacterDetail() {
       const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
       const data = await res.json();
       setCharacters(data);
-      setLoading(false);
+      
     }
     getCharacter();
   }, [])
