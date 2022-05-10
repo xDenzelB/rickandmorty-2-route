@@ -51,7 +51,8 @@ export default function CharacterList() {
                 </div>
               ))}
             </div>
-          </section><Route path={`${path}:id`}>
+          </section>
+            <Route path={`${path}:id`}>
               <CharacterDetail characters={characters} />
             </Route></>
       )}
