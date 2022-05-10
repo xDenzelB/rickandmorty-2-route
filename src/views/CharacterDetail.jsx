@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 export default function CharacterDetail() {
   const { id } = useParams();
   const [character, setCharacters] = useState({});
-  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     async function getCharacter() {
